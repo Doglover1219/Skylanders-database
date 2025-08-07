@@ -267,6 +267,8 @@ public class MainFrame extends JFrame {
         if (battleClass.getSoulGemChapter() != null) {
             stringBuilder.append("Soul Gem Location: ").append(battleClass.getSoulGemChapter()).append("\n");
         }
+        stringBuilder.append("Imaginator Abilities:\n");
+        stringBuilder.append(battleClass.getAbilityTree());
         detailsArea.setText(stringBuilder.toString());
     }
 }
