@@ -36,20 +36,46 @@ public record BattleClassAbilityTree(Ability[] primaryOptions, Ability[] primary
         this.soulGemAbility = soulGemAbility;
     }
 
-    public String getAbilityTree() {
-        return "Primary Attacks:\n" +
-                "1. " + primaryOptions[0].getTitle() + ":\n" +
-                primaryOptions[0].getDescription() +
-                "\n\nUpgrades to " + primaryUpgrades[0].getTitle() + " (Price: " + primaryUpgrades[0].getPrice() + "):\n" +
-                primaryUpgrades[0].getDescription() +
-                "\n(Requirement: " + primaryUpgrades[0].getRequirement() + ")" +
-                "\n\n2. " + primaryOptions[1].getTitle() + ":\n" +
-                primaryOptions[1].getDescription() +
-                "\n\nUpgrades to " + primaryUpgrades[1].getTitle() + " (Price: " + primaryUpgrades[1].getPrice() + "):\n" +
-                primaryUpgrades[1].getDescription() +
-                "\n(Requirement: " + primaryUpgrades[1].getRequirement() + ")" +
-                "\n\nSoul Gem Ability: " + soulGemAbility.getTitle() + " (Price: " + soulGemAbility.getPrice() + "):\n" +
+    public String getString() {
+        return getPrimary() + "\n" +
+                getSecret() + "\n" +
+                getSoulGemAbility();
+    }
+
+    private String getPrimary() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Primary Attacks:\n\n");
+
+        for (int i = 0; i < primaryOptions.length; i++) {
+            stringBuilder.append(i+1).append(". ").append(primaryOptions[i].getTitle()).append(":\n");
+            stringBuilder.append(primaryOptions[i].getDescription());
+            stringBuilder.append("\n\nUpgrades to: ").append(primaryUpgrades[i].getTitle()).append(" (Price: ").append(primaryUpgrades[i].getPrice()).append("):\n");
+            stringBuilder.append(primaryUpgrades[i].getDescription());
+            stringBuilder.append("\n(Requirement: ").append(primaryUpgrades[i].getRequirement()).append(")\n\n");
+        }
+
+        return stringBuilder.toString();
+    }
+
+    private String getSecret() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Secret Techniques:\n\n");
+
+        for (int i = 1; i < secretOptions.length; i++) {
+            stringBuilder.append(i+1).append(". ").append(secretOptions[i].getTitle()).append(":\n");
+            stringBuilder.append(secretOptions[i].getDescription());
+            stringBuilder.append("\n(Requirement: ").append(secretOptions[i].getRequirement()).append(")\n");
+            stringBuilder.append("\n\nUpgrades to: ").append(secretUpgrades[i].getTitle()).append(" (Price: ").append(secretUpgrades[i].getPrice()).append("):\n");
+            stringBuilder.append(secretUpgrades[i].getDescription());
+            stringBuilder.append("\n(Requirement: ").append(secretUpgrades[i].getRequirement()).append(")\n\n");
+        }
+
+        return stringBuilder.toString();
+    }
+
+    private String getSoulGemAbility() {
+        return "Soul Gem Ability: " + soulGemAbility.getTitle() + " (Price: " + soulGemAbility.getPrice() + "):\n" +
                 soulGemAbility.getDescription() +
-                "\n(Requirement: " + soulGemAbility.getRequirement();
+                "\n(Requirement: " + soulGemAbility.getRequirement() + ")";
     }
 }

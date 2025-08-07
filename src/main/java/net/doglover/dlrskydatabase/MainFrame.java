@@ -81,7 +81,7 @@ public class MainFrame extends JFrame {
                 return label;
             }
             private ImageIcon loadIcon(Element el) {
-                String path = "/images/" + el.getName().toLowerCase() + ".png";
+                String path = "/dlrskydatabase/textures/elements/" + el.getName().toLowerCase() + ".png";
                 URL url = getClass().getResource(path);
                 if (url == null) return null;
                 try {
@@ -118,23 +118,23 @@ public class MainFrame extends JFrame {
         if (type.equals("All") || type.equals("Skylander"))
             items.addAll(Stream.of(Skylander.values())
                     .map(Skylander::getName)
-                    .collect(Collectors.toList()));
+                    .toList());
         if (type.equals("All") || type.equals("Game"))
             items.addAll(Stream.of(Game.values())
                     .map(Game::getName)
-                    .collect(Collectors.toList()));
+                    .toList());
         if (type.equals("All") || type.equals("Chapter"))
             items.addAll(Stream.of(Chapter.values())
                     .map(Chapter::getName)
-                    .collect(Collectors.toList()));
+                    .toList());
         if (type.equals("All") || type.equals("Element"))
             items.addAll(Stream.of(Element.values())
                     .map(Element::getName)
-                    .collect(Collectors.toList()));
+                    .toList());
         if (type.equals("All") || type.equals("Battle Class"))
             items.addAll(Stream.of(BattleClass.values())
-                    .map(BattleClass::name)   // or getName(), if you have it
-                    .collect(Collectors.toList()));
+                    .map(BattleClass::getName)   // or getName(), if you have it
+                    .toList());
 
         // 2) Filter by substring:
         items = items.stream()
@@ -263,12 +263,14 @@ public class MainFrame extends JFrame {
 
     private void displayBattleClass(BattleClass battleClass) {
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("Name: ").append(battleClass.getName()).append("\n\n");
+        stringBuilder.append("Name: ").append(battleClass.getName()).append("\n");
         if (battleClass.getSoulGemChapter() != null) {
-            stringBuilder.append("Soul Gem Location: ").append(battleClass.getSoulGemChapter()).append("\n");
+            stringBuilder.append("Soul Gem Location: ").append(battleClass.getSoulGemChapter()).append("\n\n");
         }
-        stringBuilder.append("Imaginator Abilities:\n");
-        stringBuilder.append(battleClass.getAbilityTree());
+        if (battleClass.getAbilityTree() != null) {
+            stringBuilder.append("Imaginator Abilities:\n");
+            stringBuilder.append(battleClass.getAbilityTree().getString());
+        }
         detailsArea.setText(stringBuilder.toString());
     }
 }

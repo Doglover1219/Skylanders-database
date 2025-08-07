@@ -22,7 +22,7 @@ public record ElementAbilityTree(Ability[] secundaryOptions, Ability[] secundary
         this.soulGemAbility = soulGemAbility;
     }
 
-    public String getAbilityTree() {
+    public String getString() {
         StringBuilder stringBuilder = new StringBuilder();
 
         return stringBuilder.toString();
