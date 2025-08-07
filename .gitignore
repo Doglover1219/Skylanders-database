@@ -1,7 +1,12 @@
-# Ignore everything except .gitignore, README.md, and src/.
+# Ignore everything except .gitignore, README.md, .github/, and src/.
 
 *
 
 !.gitignore
 !README.md
+
+!.github/
+!.github/**
+
 !src/
+!src/**
