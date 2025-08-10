@@ -7,12 +7,12 @@ import net.doglover.dlrskydatabase.skylanders.abilities.BattleClassAbilityTree;
 public enum BattleClass {
     BAZOOKER("Bazooker", Chapter.SCHOLARVILLE,
             new BattleClassAbilityTree(
-                    // Primary Attack Options
+                    // Weapon Power Options
                     new Ability[]{
-                            new Ability("Blaster", "Press Attack 1 to fire rockets. This attack can be fired rapidly.", 0),
+                            new Ability("Blaster", "Press Attack 1 to fire rockets.\nThis attack can be fired rapidly.", 0),
                             new Ability("Destroyer", "Press Attack 1 to fire rockets with a small explosive radius.\nPress A1, A1, A1 to shoot a big rocket that explodes into smaller bombs.", 0)
                     },
-                    // Primary Attack Upgrades
+                    // Weapon Power Upgrades
                     new Ability[]{
                             new Ability("Master Blaster", "Upgrade Blaster", "Shoot an additional rocket when you press Attack 1.", 700),
                             new Ability("Master Destroyer", "Upgrade Destroyer", "Press Attack 1 to fire explosive rockets, whose shrapnel does extra damage.", 700)
@@ -36,12 +36,12 @@ public enum BattleClass {
             )),
     BOWSLINGER("Bowslinger", Chapter.DRAGON_TEMPLE,
             new BattleClassAbilityTree(
-                    // Primary Attack Options
+                    // Weapon Power Options
                     new Ability[]{
                             new Ability("Long Shot", "Press Attack 1 to fling arrows at your enemies.", 0),
                             new Ability("Multi Shot", "Press Attack 1 to fire a spread of three arrows.", 0)
                     },
-                    // Primary Attack Upgrades
+                    // Weapon Power Upgrades
                     new Ability[]{
                             new Ability("Master Long Shot", "Upgrade Long Shot", "Press Attack 1 to add an additional arcing arrow whenever you shoot!", 700),
                             new Ability("Master Multi Shot", "Upgrade Multi Shot", "Press Attack 1 to fire a spread of four arrows with a wider range!", 700)
@@ -60,17 +60,17 @@ public enum BattleClass {
                             new Ability("Mastered Slow Shot", "Upgrade Slow Shot", "Press Attack 3 to fire a slow explosive that drags enemies in and can be shot again to explode for extra damage!", 2000),
                             new Ability("Mastered Lob Shot", "Upgrade Lob Shot", "Press Attack 3 to fire multiple lobbed arrows!", 2000),
                     },
-                    // Soul Gem Ability
+                    // Soul Gem Power
                     new Ability("Volley Storm", "Requires Soul Gem from Dragon Temple", "Press Special Attack to fire a hail of exploding arrows!\n", 4000)
             )),
     BRAWLER("Brawler", Chapter.MUSHROOM_RIVER,
             new BattleClassAbilityTree(
-                    // Primary Attack Options
+                    // Weapon Power Options
                     new Ability[]{
                             new Ability("Boxer", "Press Attack 1, A1, A1, A1 to quickly jab and uppercut your enemies.", 0),
                             new Ability("Bruiser", "Press Attack 1, A1, A1 to hammer your enemies with powerful blows.", 0)
                     },
-                    // Primary Attack Upgrades
+                    // Weapon Power Upgrades
                     new Ability[]{
                             new Ability("Master Boxer", "Upgrade Boxer", "Press Attack 1 for quick attacks with extra damage output.", 700),
                             new Ability("Master Bruiser", "Upgrade Bruiser", "Press Attack 1 for power attacks that deal more damage.", 700)
@@ -94,12 +94,12 @@ public enum BattleClass {
             )),
     KNIGHT("Knight", Chapter.SKY_FORTRESS,
             new BattleClassAbilityTree(
-                    // Primary Attack Options
+                    // Weapon Power Options
                     new Ability[]{
                             new Ability("Duelist", "Press Attack 1 for fast sword swings that hit foes in front of you.", 0),
                             new Ability("Gladiator", "Press Attack 1 for powerful swings that hit foes all around you.", 0)
                     },
-                    // Primary Attack Upgrades
+                    // Weapon Power Upgrades
                     new Ability[]{
                             new Ability("Master Duelist", "Upgrade Duelist", "Press Attack 1 for rapid swings.\nPress Attack 1 while jumping for a powerful wind shear.", 700),
                             new Ability("Master Gladiator", "Upgrade Gladiator", "Press Attack 1 for strong swings.\nPress Attack 1 while jumping to create a suction field in front of you.", 700)
@@ -123,70 +123,70 @@ public enum BattleClass {
             )),
     NINJA("Ninja", Chapter.FIZZLAND,
             new BattleClassAbilityTree(
-                    // Primary Attack Options
+                    // Weapon Power Options
                     new Ability[]{
-                            new Ability("", "", 0),
-                            new Ability("", "", 0)
+                            new Ability("Piercer", "Press Attack 1 to throw piercing ninja stars in front of you.", 0),
+                            new Ability("Sneaky", "Press Attack 1 to throw ninja stars around you.", 0)
                     },
-                    // Primary Attack Upgrades
+                    // Weapon Power Upgrades
                     new Ability[]{
-                            new Ability("Master ", "Upgrade ", "", 700),
-                            new Ability("Master ", "Upgrade ", "", 700)
+                            new Ability("Master Piercer", "Upgrade Piercer", "Press Attack 1 to throw four ninja stars in a wider area!", 700),
+                            new Ability("Master Sneaky", "Upgrade Sneaky", "Press Attack 1 to throw stars around you that deal more damage!", 700)
                     },
                     // Secret Technique Options
                     new Ability[]{
-                            new Ability("", "Must be at least level 2", "", 0),
-                            new Ability("", "Must be at least level 4", "", 0),
-                            new Ability("", "Defeat Ninja Doomlander", "", 0),
-                            new Ability("", "Place a Ninja Sensei on the portal", "", 0),
+                            new Ability("Party Popper", "Must be at least level 2", "Press Attack 3 to create ninja mines that explode when hit with ninja stars.", 0),
+                            new Ability("Ninja Teleport", "Must be at least level 4", "Press Attack 3 to throw out a beacon.\nPress Attack 3 on the ground to quickly dash towards that beacon.", 0),
+                            new Ability("Invisibility", "Defeat Ninja Doomlander", "Press Attack 3 to create a decoy while you become invisible.\nMove faster when invisible.", 0),
+                            new Ability("Knife Storm", "Place a Ninja Sensei on the portal", "Press Attack 3 for a flurry of throwing knives.", 0),
                     },
                     // Secret Technique Upgrades
                     new Ability[]{
-                            new Ability("Mastered ", "Upgrade ", "", 2000),
-                            new Ability("Mastered ", "Upgrade ", "", 2000),
-                            new Ability("Mastered ", "Upgrade ", "", 2000),
-                            new Ability("Mastered ", "Upgrade ", "", 2000),
+                            new Ability("Mastered Party Popper", "Upgrade Party Popper", "Press Attack 3 to create explosive ninja mines that you can now pop twice for extra impact.", 2000),
+                            new Ability("Mastered Ninja Teleport", "Upgrade Ninja Teleport", "Press Attack 3 to throw out a beacon.\nPressing A3 again now throws a barrage of ninja stars before and after you teleport.", 2000),
+                            new Ability("Mastered Invisibility", "Upgrade Invisibility", "Press Attack 3 to create a decoy that explodes when it expires.\nYou and your decoy both do area damage while in stealth mode.", 2000),
+                            new Ability("Mastered Knife Storm", "Upgrade Knife Storm", "Press Attack 3 for a flurry of throwing knives with larger and harder-hitting knives.", 2000),
                     },
                     // Soul Gem Ability
-                    new Ability("", "Requires Soul Gem from Fizzland", "", 4000)
+                    new Ability("Near and Far", "Requires Soul Gem from Fizzland", "Press Special Attack to teleport to nearby enemies and throw stars at each one.", 4000)
             )),
     QUICKSHOT("Quickshot", Chapter.ABANDONED_AMUSEMENT_PARK,
             new BattleClassAbilityTree(
-                    // Primary Attack Options
+                    // Weapon Power Options
                     new Ability[]{
-                            new Ability("", "", 0),
-                            new Ability("", "", 0)
+                            new Ability("Marksman", "Press Attack 1 to fire bullets fast and straight out.", 0),
+                            new Ability("Wild Style", "Press Attack 1 to fire powerful scatter shots.", 0)
                     },
-                    // Primary Attack Upgrades
+                    // Weapon Power Upgrades
                     new Ability[]{
-                            new Ability("Master ", "Upgrade ", "", 700),
-                            new Ability("Master ", "Upgrade ", "", 700)
+                            new Ability("Master Marksman", "Upgrade Marksman", "Press Attack 1 for fast-paced shots that ricochet off of walls!", 700),
+                            new Ability("Master Wild Style", "Upgrade Wild Style", "Press Attack 1 for spread shots that have more range and do more damage!", 700)
                     },
                     // Secret Technique Options
                     new Ability[]{
-                            new Ability("", "Must be at least level 2", "", 0),
-                            new Ability("", "Must be at least level 4", "", 0),
-                            new Ability("", "Defeat Quickshot Doomlander", "", 0),
-                            new Ability("", "Place a Quickshot Sensei on the portal", "", 0),
+                            new Ability("Death Blossom", "Must be at least level 2", "Press Attack 3 to spin around, firing your pistols like crazy.", 0),
+                            new Ability("Blast Zone", "Must be at least level 4", "Press Attack 3 to create a danger zone where your enemies take more damage.", 0),
+                            new Ability("Charge Shot", "Defeat Quickshot Doomlander", "Hold Attack 3 to charge up a massive shot.", 0),
+                            new Ability("Gunslinging It", "Place a Quickshot Sensei on the portal", "Press Attack 3 for concentrated rapid fire in a single direction.", 0),
                     },
                     // Secret Technique Upgrades
                     new Ability[]{
-                            new Ability("Mastered ", "Upgrade ", "", 2000),
-                            new Ability("Mastered ", "Upgrade ", "", 2000),
-                            new Ability("Mastered ", "Upgrade ", "", 2000),
-                            new Ability("Mastered ", "Upgrade ", "", 2000),
+                            new Ability("Mastered Death Blossom", "Upgrade Death Blossom", "Press Attack 3 to spin around, firing your pistols like crazy.\nYou can now move while firing.", 2000),
+                            new Ability("Mastered Blast Zone", "Upgrade Blast Zone", "Press Attack 3 for a larger Blast Zone that deals more damage.", 2000),
+                            new Ability("Mastered Charge Shot", "Upgrade Charge Shot", "Press Attack 3 to charge a massive shot that deals more damage and knocks enemies back.", 2000),
+                            new Ability("Mastered Gunslinging It", "Upgrade Gunslinging It", "Press Attack 3 for concentrated rapid fire in a single direction with greater range and faster movement.", 2000),
                     },
                     // Soul Gem Ability
-                    new Ability("", "Requires Soul Gem from Abandoned Amusement Park", "", 4000)
+                    new Ability("Bounty Hunter", "Requires Soul Gem from Abandoned Amusement Park", "Press Special Attack to put a bounty on your enemies - they take extra damage and are slowed.\nDefeat them for extra gold.", 4000)
             )),
     SENTINEL("Sentinel", Chapter.THE_LAIR_OF_KAOS,
             new BattleClassAbilityTree(
-                    // Primary Attack Options
+                    // Weapon Power Options
                     new Ability[]{
                             new Ability("", "", 0),
                             new Ability("", "", 0)
                     },
-                    // Primary Attack Upgrades
+                    // Weapon Power Upgrades
                     new Ability[]{
                             new Ability("Master ", "Upgrade ", "", 700),
                             new Ability("Master ", "Upgrade ", "", 700)
@@ -210,12 +210,12 @@ public enum BattleClass {
             )),
     SMASHER("Smasher", Chapter.THE_GOLDEN_ARCADE,
             new BattleClassAbilityTree(
-                    // Primary Attack Options
+                    // Weapon Power Options
                     new Ability[]{
                             new Ability("", "", 0),
                             new Ability("", "", 0)
                     },
-                    // Primary Attack Upgrades
+                    // Weapon Power Upgrades
                     new Ability[]{
                             new Ability("Master ", "Upgrade ", "", 700),
                             new Ability("Master ", "Upgrade ", "", 700)
@@ -239,12 +239,12 @@ public enum BattleClass {
             )),
     SORCERER("Sorcerer", Chapter.CRADLE_OF_CREATION,
             new BattleClassAbilityTree(
-                    // Primary Attack Options
+                    // Weapon Power Options
                     new Ability[]{
                             new Ability("", "", 0),
                             new Ability("", "", 0)
                     },
-                    // Primary Attack Upgrades
+                    // Weapon Power Upgrades
                     new Ability[]{
                             new Ability("Master ", "Upgrade ", "", 700),
                             new Ability("Master ", "Upgrade ", "", 700)
@@ -268,12 +268,12 @@ public enum BattleClass {
             )),
     SWASHBUCKLER("Swashbuckler", Chapter.SHELLMONT_SHORES,
             new BattleClassAbilityTree(
-                    // Primary Attack Options
+                    // Weapon Power Options
                     new Ability[]{
                             new Ability("", "", 0),
                             new Ability("", "", 0)
                     },
-                    // Primary Attack Upgrades
+                    // Weapon Power Upgrades
                     new Ability[]{
                             new Ability("Master ", "Upgrade ", "", 700),
                             new Ability("Master ", "Upgrade ", "", 700)
