@@ -67,59 +67,59 @@ public enum BattleClass {
             new BattleClassAbilityTree(
                     // Primary Attack Options
                     new Ability[]{
-                            new Ability("", "", 0),
-                            new Ability("", "", 0)
+                            new Ability("Boxer", "Press Attack 1, A1, A1, A1 to quickly jab and uppercut your enemies.", 0),
+                            new Ability("Bruiser", "Press Attack 1, A1, A1 to hammer your enemies with powerful blows.", 0)
                     },
                     // Primary Attack Upgrades
                     new Ability[]{
-                            new Ability("Master ", "Upgrade ", "", 700),
-                            new Ability("Master ", "Upgrade ", "", 700)
+                            new Ability("Master Boxer", "Upgrade Boxer", "Press Attack 1 for quick attacks with extra damage output.", 700),
+                            new Ability("Master Bruiser", "Upgrade Bruiser", "Press Attack 1 for power attacks that deal more damage.", 700)
                     },
                     // Secret Technique Options
                     new Ability[]{
-                            new Ability("", "Must be at least level 2", "", 0),
-                            new Ability("", "Must be at least level 4", "", 0),
-                            new Ability("", "Defeat Brawler Doomlander", "", 0),
-                            new Ability("", "Place a Brawler Sensei on the portal", "", 0),
+                            new Ability("Megaton Punch", "Must be at least level 2", "Press Attack 3 to wind up a supercharged punch to send enemies flying.", 0),
+                            new Ability("Knockout Clap", "Must be at least level 4", "Press Attack 3 to unleash a shockwave that stuns nearby enemies.", 0),
+                            new Ability("Wave Fist", "Defeat Brawler Doomlander", "Press Attack 3 to release an explosive energy punch at your enemies.", 0),
+                            new Ability("Dashing Uppercut", "Place a Brawler Sensei on the portal", "Press Attack 3 to push and damage enemies with a charge, before you uppercut them.", 0),
                     },
                     // Secret Technique Upgrades
                     new Ability[]{
-                            new Ability("Mastered ", "Upgrade ", "", 2000),
-                            new Ability("Mastered ", "Upgrade ", "", 2000),
-                            new Ability("Mastered ", "Upgrade ", "", 2000),
-                            new Ability("Mastered ", "Upgrade ", "", 2000),
+                            new Ability("Mastered Megaton Punch", "Upgrade Megaton Punch", "Press Attack 3 to wind up a punch that creates an explosion, dealing damage to a large area.", 2000),
+                            new Ability("Mastered Knockout Clap", "Upgrade Knockout Clap", "Press Attack 3 to deal a deafening shockwave that stuns enemies longer.", 2000),
+                            new Ability("Mastered Wave Fist", "Upgrade Wave Fist", "Press and hold Attack 3 to charge up your explosive energy punch for more damage.", 2000),
+                            new Ability("Mastered Dashing Uppercut", "Upgrade Dashing Uppercut", "Press Attack 3 to charge at and uppercut enemies with devastating force.", 2000),
                     },
                     // Soul Gem Ability
-                    new Ability("", "Requires Soul Gem from Mushroom River", "", 4000)
+                    new Ability("Fists of Fury", "Requires Soul Gem from Mushroom River", "Press Special Attack to unleash the ultimate Dempsey Roll by punching your way forward through your enemies.", 4000)
             )),
     KNIGHT("Knight", Chapter.SKY_FORTRESS,
             new BattleClassAbilityTree(
                     // Primary Attack Options
                     new Ability[]{
-                            new Ability("", "", 0),
-                            new Ability("", "", 0)
+                            new Ability("Duelist", "Press Attack 1 for fast sword swings that hit foes in front of you.", 0),
+                            new Ability("Gladiator", "Press Attack 1 for powerful swings that hit foes all around you.", 0)
                     },
                     // Primary Attack Upgrades
                     new Ability[]{
-                            new Ability("Master ", "Upgrade ", "", 700),
-                            new Ability("Master ", "Upgrade ", "", 700)
+                            new Ability("Master Duelist", "Upgrade Duelist", "Press Attack 1 for rapid swings.\nPress Attack 1 while jumping for a powerful wind shear.", 700),
+                            new Ability("Master Gladiator", "Upgrade Gladiator", "Press Attack 1 for strong swings.\nPress Attack 1 while jumping to create a suction field in front of you.", 700)
                     },
                     // Secret Technique Options
                     new Ability[]{
-                            new Ability("", "Must be at least level 2", "", 0),
-                            new Ability("", "Must be at least level 4", "", 0),
-                            new Ability("", "Defeat Knight Doomlander", "", 0),
-                            new Ability("", "Place a Knight Sensei on the portal", "", 0),
+                            new Ability("Upper-Cutting Sword", "Must be at least level 2", "Press Attack 1 to knock enemies up in the air.", 0),
+                            new Ability("Spinning Slash", "Must be at least level 4", "Press Attack 1 for a spinning attack.", 0),
+                            new Ability("Mighty Cleave", "Defeat Knight Doomlander", "Press Attack 3 to hit foes with powerful shockwaves.", 0),
+                            new Ability("Ground Stab", "Place a Knight Sensei on the portal", "Press Attack 3 to stun enemies by shaking the ground.", 0),
                     },
                     // Secret Technique Upgrades
                     new Ability[]{
-                            new Ability("Mastered ", "Upgrade ", "", 2000),
-                            new Ability("Mastered ", "Upgrade ", "", 2000),
-                            new Ability("Mastered ", "Upgrade ", "", 2000),
-                            new Ability("Mastered ", "Upgrade ", "", 2000),
+                            new Ability("Mastered Upper-Cutting Sword", "Upgrade Upper-Cutting Sword", "Press Attack 3 to knock enemies up in the air.\nHit them with Attack 1 while they're in the air to send them flying.", 2000),
+                            new Ability("Mastered Spinning Slash", "Upgrade Spinning Slash", "Press Attack 3 for a spinning attack.\nHold Attack 3 to spin longer.", 2000),
+                            new Ability("Mastered Mighty Cleave", "Upgrade Mighty Cleave", "Press Attack 3 to hit foes with powerful shockwaves.\nHold Attack 3 to increase damage and range.", 2000),
+                            new Ability("Mastered Ground Stab", "Upgrade Ground Stab", "Press Attack 3 to stun enemies by shaking the ground.\nThe force will unleash an expanding shockwave.", 2000),
                     },
                     // Soul Gem Ability
-                    new Ability("", "Requires Soul Gem from Sky Fortress", "", 4000)
+                    new Ability("Excalibur Execution", "Requires Soul Gem from Sky Fortress", "Press Special Attack to trade health for a temporary speed and damage boost.", 4000)
             )),
     NINJA("Ninja", Chapter.FIZZLAND,
             new BattleClassAbilityTree(
