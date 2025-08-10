@@ -38,30 +38,30 @@ public enum BattleClass {
             new BattleClassAbilityTree(
                     // Primary Attack Options
                     new Ability[]{
-                            new Ability("", "", 0),
-                            new Ability("", "", 0)
+                            new Ability("Long Shot", "Press Attack 1 to fling arrows at your enemies.", 0),
+                            new Ability("Multi Shot", "Press Attack 1 to fire a spread of three arrows.", 0)
                     },
                     // Primary Attack Upgrades
                     new Ability[]{
-                            new Ability("Master ", "Upgrade ", "", 700),
-                            new Ability("Master ", "Upgrade ", "", 700)
+                            new Ability("Master Long Shot", "Upgrade Long Shot", "Press Attack 1 to add an additional arcing arrow whenever you shoot!", 700),
+                            new Ability("Master Multi Shot", "Upgrade Multi Shot", "Press Attack 1 to fire a spread of four arrows with a wider range!", 700)
                     },
                     // Secret Technique Options
                     new Ability[]{
-                            new Ability("", "Must be at least level 2", "", 0),
-                            new Ability("", "Must be at least level 4", "", 0),
-                            new Ability("", "Defeat Bowslinger Doomlander", "", 0),
-                            new Ability("", "Place a Bowslinger Sensei on the portal", "", 0),
+                            new Ability("Knockback Shot", "Must be at least level 2", "Press Attack 3 to fire an arrow that packs a punch.", 0),
+                            new Ability("Target Tag", "Must be at least level 4", "Press Attack 3 to paint targets for lightning-fast shots.", 0),
+                            new Ability("Slow Shot", "Defeat Bowslinger Doomlander", "Press Attack 3 to fire a shot that you can fire at for an explosion.", 0),
+                            new Ability("Lob Shot", "Place a Bowslinger Sensei on the portal", "Press Attack 3 to fire a powerful lobbed attack!", 0),
                     },
                     // Secret Technique Upgrades
                     new Ability[]{
-                            new Ability("Mastered ", "Upgrade ", "", 2000),
-                            new Ability("Mastered ", "Upgrade ", "", 2000),
-                            new Ability("Mastered ", "Upgrade ", "", 2000),
-                            new Ability("Mastered ", "Upgrade ", "", 2000),
+                            new Ability("Mastered Knockback Shot", "Upgrade Knockback Shot", "Press Attack 3 to fire an explosive shot that leaves a lingering cloud of damage!", 2000),
+                            new Ability("Mastered Target Tag", "Upgrade Target Tag", "Press Attack 3 to target enemies faster than ever, doing even more damage!", 2000),
+                            new Ability("Mastered Slow Shot", "Upgrade Slow Shot", "Press Attack 3 to fire a slow explosive that drags enemies in and can be shot again to explode for extra damage!", 2000),
+                            new Ability("Mastered Lob Shot", "Upgrade Lob Shot", "Press Attack 3 to fire multiple lobbed arrows!", 2000),
                     },
                     // Soul Gem Ability
-                    new Ability("", "Requires Soul Gem from Dragon Temple", "", 4000)
+                    new Ability("Volley Storm", "Requires Soul Gem from Dragon Temple", "Press Special Attack to fire a hail of exploding arrows!\n", 4000)
             )),
     BRAWLER("Brawler", Chapter.MUSHROOM_RIVER,
             new BattleClassAbilityTree(
