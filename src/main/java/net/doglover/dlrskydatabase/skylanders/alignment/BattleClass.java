@@ -241,59 +241,59 @@ public enum BattleClass {
             new BattleClassAbilityTree(
                     // Weapon Power Options
                     new Ability[]{
-                            new Ability("", "", 0),
-                            new Ability("", "", 0)
+                            new Ability("Enchanter", "Press Attack 1 to throw magical orbs at your enemies.\nPress A1, A1, A1 for a quintuple shot!", 0),
+                            new Ability("Enlightened", "Press or hold Attack 1 to use a magic beam to zap your enemies with.", 0)
                     },
                     // Weapon Power Upgrades
                     new Ability[]{
-                            new Ability("Master ", "Upgrade ", "", 700),
-                            new Ability("Master ", "Upgrade ", "", 700)
+                            new Ability("Master Enchanter", "Upgrade Enchanter", "Press Attack 1 to fire off a bigger burst of magical energy that does more damage.", 700),
+                            new Ability("Master Enlightened", "Upgrade Enlightened", "Press or hold Attack 1 to zap enemies with a magic beam that does enhanced damage.", 700)
                     },
                     // Secret Technique Options
                     new Ability[]{
-                            new Ability("", "Must be at least level 2", "", 0),
-                            new Ability("", "Must be at least level 4", "", 0),
-                            new Ability("", "Defeat Sorcerer Doomlander", "", 0),
-                            new Ability("", "Place a Sorcerer Sensei on the portal", "", 0),
+                            new Ability("Summoned Fury", "Must be at least level 2", "Press and hold Attack 3 to summon powerful magical lightning.", 0),
+                            new Ability("Mystic Grid", "Must be at least level 4", "Press Attack 3 and create a magical grid that will hurt your enemies.", 0),
+                            new Ability("Sticky Orb", "Defeat Sorcerer Doomlander", "Press Attack 3 to create an orb that enemies get stuck to.", 0),
+                            new Ability("Magic Upheaval", "Place a Sorcerer Sensei on the portal", "Press Attack 3 to throw enemies high up into the air around you.", 0),
                     },
                     // Secret Technique Upgrades
                     new Ability[]{
-                            new Ability("Mastered ", "Upgrade ", "", 2000),
-                            new Ability("Mastered ", "Upgrade ", "", 2000),
-                            new Ability("Mastered ", "Upgrade ", "", 2000),
-                            new Ability("Mastered ", "Upgrade ", "", 2000),
+                            new Ability("Mastered Summoned Fury", "Upgrade Summoned Fury", "Summoned Fury becomes more powerful.", 2000),
+                            new Ability("Mastered Mystic Grid", "Upgrade Mystic Grid", "Mystic Grid becomes more powerful, shocking smaller enemies.", 2000),
+                            new Ability("Mastered Sticky Orb", "Upgrade Sticky Orb", "Sticky Orb becomes faster and more powerful.", 2000),
+                            new Ability("Mastered Magic Upheaval", "Upgrade Magic Upheaval", "Press Attack 3 to blast enemies into the air for stronger impact and more damage.", 2000),
                     },
                     // Soul Gem Ability
-                    new Ability("", "Requires Soul Gem from Cradle of Creation", "", 4000)
+                    new Ability("Sorcerer's Circle", "Requires Soul Gem from Cradle of Creation", "Press Special Attack to create a damage barrier around you.\nPress Special Attack again to shoot it out at enemies.", 4000)
             )),
     SWASHBUCKLER("Swashbuckler", Chapter.SHELLMONT_SHORES,
             new BattleClassAbilityTree(
                     // Weapon Power Options
                     new Ability[]{
-                            new Ability("", "", 0),
-                            new Ability("", "", 0)
+                            new Ability("Charger", "Press Attack 1 to attack with your dual blades at close range.", 0),
+                            new Ability("Knife Thrower", "Press Attack 1 to throw blades at your enemies.", 0)
                     },
                     // Weapon Power Upgrades
                     new Ability[]{
-                            new Ability("Master ", "Upgrade ", "", 700),
-                            new Ability("Master ", "Upgrade ", "", 700)
+                            new Ability("Master Charger", "Upgrade Charger", "Press Attack 1 to slash and deal more damage with these sharper blades.", 700),
+                            new Ability("Master Knife Thrower", "Upgrade Knife Thrower", "Press Attack 1 to throw your blades, doing more damage and stunning on critical hits.", 700)
                     },
                     // Secret Technique Options
                     new Ability[]{
-                            new Ability("", "Must be at least level 2", "", 0),
-                            new Ability("", "Must be at least level 4", "", 0),
-                            new Ability("", "Defeat Swashbuckler Doomlander", "", 0),
-                            new Ability("", "Place a Swashbuckler Sensei on the portal", "", 0),
+                            new Ability("Sword Wall", "Must be at least level 2", "Press Attack 3 to create a sword wall.\nHit the wall with Attack 1 to send swords flying.", 0),
+                            new Ability("Takedown", "Must be at least level 4", "Press Attack 3 to swiftly yank enemies underground with a damaging blow.", 0),
+                            new Ability("Bladenado", "Defeat Swashbuckler Doomlander", "Press Attack 3 for a ferocious blade spin attack.", 0),
+                            new Ability("Criss-Cross", "Place a Swashbuckler Sensei on the portal", "Press Attack 3 to strike with a devastating criss-cross attack.", 0),
                     },
                     // Secret Technique Upgrades
                     new Ability[]{
-                            new Ability("Mastered ", "Upgrade ", "", 2000),
-                            new Ability("Mastered ", "Upgrade ", "", 2000),
-                            new Ability("Mastered ", "Upgrade ", "", 2000),
-                            new Ability("Mastered ", "Upgrade ", "", 2000),
+                            new Ability("Mastered Sword Wall", "Upgrade Sword Wall", "Press Attack 3 to create an extra-damaging sword wall with increased range.", 2000),
+                            new Ability("Mastered Takedown", "Upgrade Takedown", "Press Attack 3 to yank enemies underground.\nYour exit portal will now explode, damaging nearby enemies.", 2000),
+                            new Ability("Mastered Bladenado", "Upgrade Bladenado", "Press Attack 3 for a ferocious blade spin attack that continues forward after you have finished the attack.", 2000),
+                            new Ability("Mastered Criss-Cross", "Upgrade Criss-Cross", "Press Attack 3 to strike with a devastating criss-cross attack that now curses enemies, causing additional damage for a short time.", 2000),
                     },
                     // Soul Gem Ability
-                    new Ability("", "Requires Soul Gem from Shellmont Shores", "", 4000)
+                    new Ability("Steel Fans", "Requires Soul Gem from Shellmont Shores", "Press Special Attack to turn swords into steel fans-a massive spiral attack.", 4000)
             )),
     KAOS("Kaos (Battle Class)", null, null);
 
