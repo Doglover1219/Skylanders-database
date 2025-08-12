@@ -139,7 +139,7 @@ public class MainFrame extends JFrame {
         // 2) Filter by substring:
         items = items.stream()
                 .filter(name -> name.toLowerCase().contains(query))
-                .collect(Collectors.toList());
+                .toList());
 
         // 3) Sort if needed:
         if (sort.equals("A → Z")) {
