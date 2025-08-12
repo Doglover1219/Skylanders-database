@@ -133,13 +133,13 @@ public class MainFrame extends JFrame {
                     .toList());
         if (type.equals("All") || type.equals("Battle Class"))
             items.addAll(Stream.of(BattleClass.values())
-                    .map(BattleClass::getName)
+                    .map(BattleClass::getName)   // or getName(), if you have it
                     .toList());
 
         // 2) Filter by substring:
         items = items.stream()
                 .filter(name -> name.toLowerCase().contains(query))
-                .toList();
+                .toList());
 
         // 3) Sort if needed:
         if (sort.equals("A → Z")) {
