@@ -500,16 +500,6 @@ public class MainFrame extends JFrame {
             stringBuilder.append(" - ").append(objective.getTitle()).append("\n");
         }
         stringBuilder.append("\n");
-        if (chapter.getSenseiShrineClasses() != null) {
-            if (chapter.getSenseiShrineClasses().size() == 1) {
-                stringBuilder.append("Sensei Shrine: ")
-                        .append(chapter.getSenseiShrineClasses().getFirst().getName());
-            } else {
-                stringBuilder.append("Sensei Shrines: ")
-                        .append(chapter.getSenseiShrineClasses().getFirst().getName()).append(" and ")
-                        .append(chapter.getSenseiShrineClasses().getLast().getName());
-            }
-        }
         detailsArea.setText(stringBuilder.toString());
     }
 
@@ -522,6 +512,7 @@ public class MainFrame extends JFrame {
     private void displayBattleClass(BattleClass battleClass) {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Name: ").append(battleClass.getName()).append("\n");
+        System.out.println(battleClass.getSoulGemChapter());
         if (battleClass.getSoulGemChapter() != null) {
             stringBuilder.append("Soul Gem Location: ").append(battleClass.getSoulGemChapter()).append("\n\n");
         }

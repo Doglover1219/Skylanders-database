@@ -5,7 +5,7 @@ import net.doglover.dlrskydatabase.skylanders.abilities.Ability;
 import net.doglover.dlrskydatabase.skylanders.abilities.BattleClassAbilityTree;
 
 public enum BattleClass {
-    BAZOOKER("Bazooker", Chapter.SCHOLARVILLE,
+    BAZOOKER("Bazooker", Chapter.SCHOLARVILLE, Chapter.THE_GOLDEN_ARCADE,
             new BattleClassAbilityTree(
                     // Weapon Power Options
                     new Ability[]{
@@ -34,7 +34,7 @@ public enum BattleClass {
                     // Soul Gem Ability
                     new Ability("1M4G1N1T3 Payload", "Requires Soul Gem from Scholarville", "Hold Special Attack to launch a missile pack with Imaginite Explosives.", 4000)
             )),
-    BOWSLINGER("Bowslinger", Chapter.DRAGON_TEMPLE,
+    BOWSLINGER("Bowslinger", Chapter.DRAGON_TEMPLE, Chapter.SHELLMONT_SHORES,
             new BattleClassAbilityTree(
                     // Weapon Power Options
                     new Ability[]{
@@ -63,7 +63,7 @@ public enum BattleClass {
                     // Soul Gem Power
                     new Ability("Volley Storm", "Requires Soul Gem from Dragon Temple", "Press Special Attack to fire a hail of exploding arrows!\n", 4000)
             )),
-    BRAWLER("Brawler", Chapter.MUSHROOM_RIVER,
+    BRAWLER("Brawler", Chapter.MUSHROOM_RIVER, Chapter.CRADLE_OF_CREATION,
             new BattleClassAbilityTree(
                     // Weapon Power Options
                     new Ability[]{
@@ -92,7 +92,7 @@ public enum BattleClass {
                     // Soul Gem Ability
                     new Ability("Fists of Fury", "Requires Soul Gem from Mushroom River", "Press Special Attack to unleash the ultimate Dempsey Roll by punching your way forward through your enemies.", 4000)
             )),
-    KNIGHT("Knight", Chapter.SKY_FORTRESS,
+    KNIGHT("Knight", Chapter.SKY_FORTRESS, Chapter.SHELLMONT_SHORES,
             new BattleClassAbilityTree(
                     // Weapon Power Options
                     new Ability[]{
@@ -121,7 +121,7 @@ public enum BattleClass {
                     // Soul Gem Ability
                     new Ability("Excalibur Execution", "Requires Soul Gem from Sky Fortress", "Press Special Attack to trade health for a temporary speed and damage boost.", 4000)
             )),
-    NINJA("Ninja", Chapter.FIZZLAND,
+    NINJA("Ninja", Chapter.FIZZLAND, Chapter.MUSHROOM_RIVER,
             new BattleClassAbilityTree(
                     // Weapon Power Options
                     new Ability[]{
@@ -150,7 +150,7 @@ public enum BattleClass {
                     // Soul Gem Ability
                     new Ability("Near and Far", "Requires Soul Gem from Fizzland", "Press Special Attack to teleport to nearby enemies and throw stars at each one.", 4000)
             )),
-    QUICKSHOT("Quickshot", Chapter.ABANDONED_AMUSEMENT_PARK,
+    QUICKSHOT("Quickshot", Chapter.ABANDONED_AMUSEMENT_PARK, Chapter.SKY_FORTRESS,
             new BattleClassAbilityTree(
                     // Weapon Power Options
                     new Ability[]{
@@ -179,7 +179,7 @@ public enum BattleClass {
                     // Soul Gem Ability
                     new Ability("Bounty Hunter", "Requires Soul Gem from Abandoned Amusement Park", "Press Special Attack to put a bounty on your enemies - they take extra damage and are slowed.\nDefeat them for extra gold.", 4000)
             )),
-    SENTINEL("Sentinel", Chapter.THE_LAIR_OF_KAOS,
+    SENTINEL("Sentinel", Chapter.THE_LAIR_OF_KAOS, Chapter.SCHOLARVILLE,
             new BattleClassAbilityTree(
                     // Weapon Power Options
                     new Ability[]{
@@ -208,7 +208,7 @@ public enum BattleClass {
                     // Soul Gem Ability
                     new Ability("", "Requires Soul Gem from The Lair of Kaos", "Press Special Attack to create an expanding shockwave.", 4000)
             )),
-    SMASHER("Smasher", Chapter.THE_GOLDEN_ARCADE,
+    SMASHER("Smasher", Chapter.THE_GOLDEN_ARCADE, Chapter.SKY_FORTRESS,
             new BattleClassAbilityTree(
                     // Weapon Power Options
                     new Ability[]{
@@ -237,7 +237,7 @@ public enum BattleClass {
                     // Soul Gem Ability
                     new Ability("Smash Smash Rinse Repeat", "Requires Soul Gem from The Golden Arcade", "Press and hold Special Attack to go on a crazy Smash Rampage.", 4000)
             )),
-    SORCERER("Sorcerer", Chapter.CRADLE_OF_CREATION,
+    SORCERER("Sorcerer", Chapter.CRADLE_OF_CREATION, Chapter.SCHOLARVILLE,
             new BattleClassAbilityTree(
                     // Weapon Power Options
                     new Ability[]{
@@ -266,7 +266,7 @@ public enum BattleClass {
                     // Soul Gem Ability
                     new Ability("Sorcerer's Circle", "Requires Soul Gem from Cradle of Creation", "Press Special Attack to create a damage barrier around you.\nPress Special Attack again to shoot it out at enemies.", 4000)
             )),
-    SWASHBUCKLER("Swashbuckler", Chapter.SHELLMONT_SHORES,
+    SWASHBUCKLER("Swashbuckler", Chapter.SHELLMONT_SHORES, Chapter.FIZZLAND,
             new BattleClassAbilityTree(
                     // Weapon Power Options
                     new Ability[]{
@@ -295,17 +295,21 @@ public enum BattleClass {
                     // Soul Gem Ability
                     new Ability("Steel Fans", "Requires Soul Gem from Shellmont Shores", "Press Special Attack to turn swords into steel fans-a massive spiral attack.", 4000)
             )),
-    KAOS("Kaos (Battle Class)", null, null);
+    KAOS("Kaos (Battle Class)", null, null, null);
 
     /* --- Fields --- */
     private final String name;
     private final Chapter soulGemChapter;
+    private final Chapter senseiShrineChapter;
+    private final Chapter doomlanderBattleChapter;
     private final BattleClassAbilityTree abilityTree;
 
     /* --- Constructor --- */
-    BattleClass(String name, Chapter soulGemChapter, BattleClassAbilityTree abilityTree) {
+    BattleClass(String name, Chapter soulGemChapter, Chapter senseiShrineChapter, BattleClassAbilityTree abilityTree) {
         this.name = name;
         this.soulGemChapter = soulGemChapter;
+        this.senseiShrineChapter = senseiShrineChapter;
+        this.doomlanderBattleChapter = soulGemChapter;
         this.abilityTree = abilityTree;
     }
 
@@ -315,6 +319,12 @@ public enum BattleClass {
     }
     public Chapter getSoulGemChapter() {
         return soulGemChapter;
+    }
+    public Chapter getSenseiShrineChapter() {
+        return senseiShrineChapter;
+    }
+    public Chapter getDoomlanderBattleChapter() {
+        return doomlanderBattleChapter;
     }
     public BattleClassAbilityTree getAbilityTree() {
         return abilityTree;
