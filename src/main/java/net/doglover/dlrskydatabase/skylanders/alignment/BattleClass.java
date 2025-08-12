@@ -14,7 +14,7 @@ public enum BattleClass {
     SMASHER("Smasher", Chapter.THE_GOLDEN_ARCADE, null),
     SORCERER("Sorcerer", Chapter.CRADLE_OF_CREATION, null),
     SWASHBUCKLER("Swashbuckler", Chapter.SHELLMONT_SHORES, null),
-    KAOS("Kaos", null, null);
+    KAOS("Kaos (Battle Class)", null, null);
 
     /* --- Fields --- */
     private final String name;

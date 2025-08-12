@@ -619,11 +619,11 @@ public class Skylander {
             .baseVariant(KING_PEN).build();
     public static final Skylander TIDEPOOL = new Builder("Tidepool", Game.IMAGINATORS, Element.WATER)
             .catchphrase("In a League of My Own!").soulGemChapter(Chapter.ABANDONED_AMUSEMENT_PARK)
-            .battleClass(BattleClass.QUICKSHOT).build(); //.battleClass(BattleClass.BRAWLER)
+            .battleClass(BattleClass.QUICKSHOT).build();
 
     public static final Skylander GRAVE_CLOBBER = new Builder("Grave Clobber", Game.IMAGINATORS, Element.WATER)
             .catchphrase("A Watery Grave Awaits!").soulGemChapter(Chapter.DRAGON_TEMPLE)
-            .build();
+            .battleClass(BattleClass.BRAWLER).build();
     // - Magic -
     public static final Skylander BUCKSHOT = new Builder("Buckshot", Game.IMAGINATORS, Element.MAGIC)
             .catchphrase("Quiver with Fear!").soulGemChapter(Chapter.SENSEI_MAGIC_REALM)
@@ -651,7 +651,8 @@ public class Skylander {
             .battleClass(BattleClass.SORCERER).build();
     // - Dark -
     public static final Skylander STARCAST = new Builder("Starcast", Game.IMAGINATORS, Element.DARK)
-            .catchphrase("A Shot in the Dark!").soulGemChapter(Chapter.SKY_FORTRESS).build();
+            .catchphrase("A Shot in the Dark!").soulGemChapter(Chapter.SKY_FORTRESS)
+            .battleClass(BattleClass.NINJA).build();
 
     public static final Skylander HOOD_SICKLE = new Builder("Hood Sickle", Game.IMAGINATORS, Element.DARK)
             .catchphrase("Any Last Words?").soulGemChapter(Chapter.SENSEI_DARK_REALM)
@@ -708,7 +709,6 @@ public class Skylander {
         this.elementalPower = builder.elementalPower;
         this.maxElementalPower = builder.maxElementalPower;
 
-        this.swapAbility = builder.swapAbility;
 
         if (builder.game == Game.IMAGINATORS) {
             if (builder.battleClass != null) {
@@ -728,7 +728,7 @@ public class Skylander {
         this.type = Objects.requireNonNullElseGet(builder.type, () -> switch (builder.game) {
             case Game.IMAGINATORS -> SkylanderType.SENSEI;
             case Game.SUPERCHARGERS -> SkylanderType.SUPERCHARGER;
-            default -> (builder.baseVariant == null) ? SkylanderType.CORE : builder.baseVariant.type;
+            default -> (builder.baseVariant == null) ? SkylanderType.SERIES1 : builder.baseVariant.type;
         });
 
         this.baseVariant = builder.baseVariant;
@@ -739,6 +739,16 @@ public class Skylander {
                 || builder.baseVariant.getGame() == this.game)
                 ? builder.soulGemChapter
                 : builder.baseVariant.soulGemChapter;
+
+        SwapAbility tempSwapAbility = null;
+        if (builder.game == Game.SWAP_FORCE) {
+            if (this.baseVariant != null) {
+                if (this.baseVariant.getSwapAbility() != null) {
+                    tempSwapAbility = this.baseVariant.getSwapAbility();
+                }
+            }
+        }
+        this.swapAbility = tempSwapAbility;
 
         REGISTRY.add(this);
     }
@@ -823,11 +833,13 @@ public class Skylander {
 
         public Builder swapAbility(SwapAbility swapAbility) {
             this.swapAbility = swapAbility;
+            this.type = SkylanderType.SWAP_FORCE;
             return this;
         }
 
         public Builder battleClass(BattleClass battleClass) {
             this.battleClass = battleClass;
+            this.type = SkylanderType.SENSEI;
             return this;
         }
 

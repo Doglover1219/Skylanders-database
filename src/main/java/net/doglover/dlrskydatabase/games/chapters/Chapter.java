@@ -238,15 +238,15 @@ public enum Chapter {
             objective1("Find a way inside", "Find the Brain"),
             siObjective2(3, 1, 3, 1),
             siObjective3(30, 13), BattleClass.BAZOOKER),
-    DRAGON_TEMPLE("Dragon Temple", 8,
+    DRAGON_TEMPLE("Dragon Temple", 8, Game.IMAGINATORS, true,
             objective1("Climb to the Dragon Temple", "Glide down to Skylands"),
             siObjective2(3, 1, 2, 1),
             siObjective3(120, 12, 18, 20)),
-    ABANDONED_AMUSEMENT_PARK("Abandoned Amusement Park", 9,
+    ABANDONED_AMUSEMENT_PARK("Abandoned Amusement Park", 9, Game.IMAGINATORS, true,
             objective1("Enter the Amusement Park to Decorate the Cake", "Move the Octopus", "Restore Power to the Frosting Cannon", "Frost the Cake", "Restore Power to reach the Winter Wonderland", "Defeat the Doomlander"),
             siObjective2(3, 1, 2, 1),
             siObjective3(50, 16, 16, 30)),
-    THE_LAIR_OF_KAOS("The Lair of Kaos", 10,
+    THE_LAIR_OF_KAOS("The Lair of Kaos", 10, Game.IMAGINATORS, true,
             objective1("Approach Kaos' Fortress", "Play Kaos' Game Show!", "Finish the Bonus Round!"),
             siObjective2(3, 1, 2, 1),
             siObjective3(9, 3, 30)),
@@ -382,7 +382,11 @@ public enum Chapter {
         };
     }
     public List<BattleClass> getSenseiShrineClasses() {
-        return Arrays.stream(senseiShrineClasses).toList();
+        if (senseiShrineClasses != null) {
+            return Arrays.stream(senseiShrineClasses).toList();
+        } else {
+            return null;
+        }
     }
 
     /* --- Static Helper Methods --- */

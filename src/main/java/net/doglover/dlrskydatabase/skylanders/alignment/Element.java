@@ -11,7 +11,7 @@ public enum Element {
     MAGIC("Magic"),
     TECH("Tech"),
     DARK("Dark"),
-    KAOS("Kaos");
+    KAOS("Kaos (Element)");
 
     /* --- Fields --- */
     private final String name;
