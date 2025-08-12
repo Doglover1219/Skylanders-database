@@ -32,7 +32,7 @@ public record SkylanderAbilityTree(Ability[] baseAbilities, Ability[] buyableAbi
         this.soulGemAbility = soulGemAbility;
     }
 
-    public String getAbilityTree() {
+    public String getString() {
         StringBuilder stringBuilder = new StringBuilder();
 
         return stringBuilder.toString();

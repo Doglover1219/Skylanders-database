@@ -12,9 +12,9 @@ public record ElementAbilityTree(Ability[] secundaryOptions, Ability[] secundary
 
         // Length‐checks
         if (secundaryOptions.length != 4)
-            throw new IllegalArgumentException("baseAbilities must have exactly 2 elements");
+            throw new IllegalArgumentException("secundaryOptions must have exactly 2 elements");
         if (secundaryUpgrades.length != 4)
-            throw new IllegalArgumentException("buyableAbilities must have exactly 4 elements");
+            throw new IllegalArgumentException("secundaryUpgrades must have exactly 4 elements");
 
         // Shallow‐copy to preserve immutability
         this.secundaryOptions = Arrays.copyOf(secundaryOptions, secundaryOptions.length);
@@ -22,7 +22,7 @@ public record ElementAbilityTree(Ability[] secundaryOptions, Ability[] secundary
         this.soulGemAbility = soulGemAbility;
     }
 
-    public String getAbilityTree() {
+    public String getString() {
         StringBuilder stringBuilder = new StringBuilder();
 
         return stringBuilder.toString();
