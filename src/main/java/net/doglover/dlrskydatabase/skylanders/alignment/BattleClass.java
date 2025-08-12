@@ -183,59 +183,59 @@ public enum BattleClass {
             new BattleClassAbilityTree(
                     // Weapon Power Options
                     new Ability[]{
-                            new Ability("", "", 0),
-                            new Ability("", "", 0)
+                            new Ability("Buster", "Press Attack 1 to swipe enemies around you with your staff.", 0),
+                            new Ability("Acrobat", "Press Attack 1 to focus your attack on enemies in front of you.", 0)
                     },
                     // Weapon Power Upgrades
                     new Ability[]{
-                            new Ability("Master ", "Upgrade ", "", 700),
-                            new Ability("Master ", "Upgrade ", "", 700)
+                            new Ability("Master Buster", "Upgrade Buster", "Press Attack 1 for fast, powerful swipes that accelerate and do more damage as you score hits.", 700),
+                            new Ability("Master Acrobat", "Upgrade Acrobat", "Press Attack 3 for swift spinning strikes that do more damage and knock enemies down.", 700)
                     },
                     // Secret Technique Options
                     new Ability[]{
-                            new Ability("", "Must be at least level 2", "", 0),
-                            new Ability("", "Must be at least level 4", "", 0),
-                            new Ability("", "Defeat Sentinel Doomlander", "", 0),
-                            new Ability("", "Place a Sentinel Sensei on the portal", "", 0),
+                            new Ability("Clothesline", "Must be at least level 2", "Press Attack 3 to clothesline your enemies.", 0),
+                            new Ability("Top Spin", "Must be at least level 4", "Press Attack 3 to create a suction field by spinning your staff.", 0),
+                            new Ability("Grand Slam", "Defeat Sentinel Doomlander", "Create a powerful shockwave that travels forward.", 0),
+                            new Ability("Hypnotise", "Place a Sentinel Sensei on the portal", "Press Attack 3 to slow down your enemies by entrancing them with your staff.", 0),
                     },
                     // Secret Technique Upgrades
                     new Ability[]{
-                            new Ability("Mastered ", "Upgrade ", "", 2000),
-                            new Ability("Mastered ", "Upgrade ", "", 2000),
-                            new Ability("Mastered ", "Upgrade ", "", 2000),
-                            new Ability("Mastered ", "Upgrade ", "", 2000),
+                            new Ability("Mastered Clothesline", "Upgrade Clothesline", "Press Attack 3 to clothesline your enemies.\nYour sheer power will push them away at the end of the attack.", 2000),
+                            new Ability("Mastered Top Spin", "Upgrade Top Spin", "Press Attack 3 to suck enemies to you.\nEnemies you've pulled in are knocked up in the air.", 2000),
+                            new Ability("Mastered Grand Slam", "Upgrade Grand Slam", "Press Attack 3 to create a powerful shockwave that travels across a wide area in front of you.", 2000),
+                            new Ability("Mastered Hypnotise", "Upgrade Hypnotise", "Press Attack 3 to entrance enemies.\nSlowed enemies now take damage over time.", 2000),
                     },
                     // Soul Gem Ability
-                    new Ability("", "Requires Soul Gem from The Lair of Kaos", "", 4000)
+                    new Ability("", "Requires Soul Gem from The Lair of Kaos", "Press Special Attack to create an expanding shockwave.", 4000)
             )),
     SMASHER("Smasher", Chapter.THE_GOLDEN_ARCADE,
             new BattleClassAbilityTree(
                     // Weapon Power Options
                     new Ability[]{
-                            new Ability("", "", 0),
-                            new Ability("", "", 0)
+                            new Ability("Obliterator", "Press Attack 1 to smash things around you with your club!", 0),
+                            new Ability("Pulverizer", "Press Attack 1 to smash things in front of you with full force!", 0)
                     },
                     // Weapon Power Upgrades
                     new Ability[]{
-                            new Ability("Master ", "Upgrade ", "", 700),
-                            new Ability("Master ", "Upgrade ", "", 700)
+                            new Ability("Master Obliterator", "Upgrade Obliterator", "Press Attack 1 to powerfully smash, creating earthquakes that damage nearby enemies!", 700),
+                            new Ability("Master Pulverizer", "Upgrade Pulverizer", "Press Attack 1 to swing your club, enemies launched create a shockwave upon landing!", 700)
                     },
                     // Secret Technique Options
                     new Ability[]{
-                            new Ability("", "Must be at least level 2", "", 0),
-                            new Ability("", "Must be at least level 4", "", 0),
-                            new Ability("", "Defeat Smasher Doomlander", "", 0),
-                            new Ability("", "Place a Smasher Sensei on the portal", "", 0),
+                            new Ability("War Cry Rage", "Must be at least level 2", "Press Attack 3 to scare and weaken your enemies.", 0),
+                            new Ability("Seismic Slam", "Must be at least level 4", "Press Attack 3 to create a seismic blast.", 0),
+                            new Ability("Berserker", "Defeat Smasher Doomlander", "Press Attack 3 to increase your power and speed.", 0),
+                            new Ability("Here Comes the Pain", "Place a Smasher Sensei on the portal", "Press Attack 3 to charge and belly-flop your foes.", 0),
                     },
                     // Secret Technique Upgrades
                     new Ability[]{
-                            new Ability("Mastered ", "Upgrade ", "", 2000),
-                            new Ability("Mastered ", "Upgrade ", "", 2000),
-                            new Ability("Mastered ", "Upgrade ", "", 2000),
-                            new Ability("Mastered ", "Upgrade ", "", 2000),
+                            new Ability("Mastered War Cry Rage", "Upgrade War Cry Rage", "Press Attack 3 to scare and weaken your enemies and damage them over time.", 2000),
+                            new Ability("Mastered Seismic Slam", "Upgrade Seismic Slam", "Press Attack 3 to create a massive seismic blast.", 2000),
+                            new Ability("Mastered Berserker", "Upgrade Berserker", "Press Attack 3 to increase your power, speed, and defense.", 2000),
+                            new Ability("Mastered Here Comes the Pain", "Upgrade Here Comes the Pain", "Press Attack 3 to belly-flop and create a giant sinkhole that sucks enemies in.", 2000),
                     },
                     // Soul Gem Ability
-                    new Ability("", "Requires Soul Gem from The Golden Arcade", "", 4000)
+                    new Ability("Smash Smash Rinse Repeat", "Requires Soul Gem from The Golden Arcade", "Press and hold Special Attack to go on a crazy Smash Rampage.", 4000)
             )),
     SORCERER("Sorcerer", Chapter.CRADLE_OF_CREATION,
             new BattleClassAbilityTree(
