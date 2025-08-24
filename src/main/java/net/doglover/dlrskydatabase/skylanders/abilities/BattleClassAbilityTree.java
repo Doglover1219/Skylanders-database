@@ -8,21 +8,25 @@ public record BattleClassAbilityTree(Ability[] primaryOptions, Ability[] primary
     public BattleClassAbilityTree(Ability[] primaryOptions, Ability[] primaryUpgrades, Ability[] secretOptions,
                                   Ability[] secretUpgrades, Ability soulGemAbility) {
         // Null‐checks
-        Objects.requireNonNull(primaryOptions, "baseAbilities");
-        Objects.requireNonNull(primaryUpgrades, "buyableAbilities");
-        Objects.requireNonNull(secretOptions, "path1Abilities");
-        Objects.requireNonNull(secretUpgrades, "path2Abilities");
+        Objects.requireNonNull(primaryOptions, "primaryOptions");
+        Objects.requireNonNull(primaryUpgrades, "primaryUpgrades");
+        Objects.requireNonNull(secretOptions, "secretOptions");
+        Objects.requireNonNull(secretUpgrades, "secretUpgrades");
         Objects.requireNonNull(soulGemAbility, "soulGemAbility");
 
         // Length‐checks
-        if (primaryOptions.length != 2)
-            throw new IllegalArgumentException("baseAbilities must have exactly 2 elements");
-        if (primaryUpgrades.length != 2)
-            throw new IllegalArgumentException("buyableAbilities must have exactly 2 elements");
-        if (secretOptions.length != 4)
-            throw new IllegalArgumentException("path1Abilities must have exactly 3 elements");
-        if (secretUpgrades.length != 4)
-            throw new IllegalArgumentException("path2Abilities must have exactly 3 elements");
+        if (primaryOptions.length != 2) {
+            throw new IllegalArgumentException("primaryOptions must have exactly 2 elements");
+        }
+        if (primaryUpgrades.length != 2) {
+            throw new IllegalArgumentException("primaryUpgrades must have exactly 2 elements");
+        }
+        if (secretOptions.length != 4) {
+            throw new IllegalArgumentException("secretOptions must have exactly 3 elements");
+        }
+        if (secretUpgrades.length != 4) {
+            throw new IllegalArgumentException("secretUpgrades must have exactly 3 elements");
+        }
 
         // Shallow‐copy to preserve immutability
         this.primaryOptions = Arrays.copyOf(primaryOptions, primaryOptions.length);
@@ -32,9 +36,46 @@ public record BattleClassAbilityTree(Ability[] primaryOptions, Ability[] primary
         this.soulGemAbility = soulGemAbility;
     }
 
-    public String getAbilityTree() {
+    public String getString() {
+        return getPrimary() + "\n" +
+                getSecret() + "\n" +
+                getSoulGemAbility();
+    }
+
+    private String getPrimary() {
         StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Primary Attacks:\n\n");
+
+        for (int i = 0; i < primaryOptions.length; i++) {
+            stringBuilder.append(i+1).append(". ").append(primaryOptions[i].getTitle()).append(":\n");
+            stringBuilder.append(primaryOptions[i].getDescription());
+            stringBuilder.append("\n\nUpgrades to: ").append(primaryUpgrades[i].getTitle()).append(" (Price: ").append(primaryUpgrades[i].getPrice()).append("):\n");
+            stringBuilder.append(primaryUpgrades[i].getDescription());
+            stringBuilder.append("\n(Requirement: ").append(primaryUpgrades[i].getRequirement()).append(")\n\n");
+        }
 
         return stringBuilder.toString();
+    }
+
+    private String getSecret() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Secret Techniques:\n\n");
+
+        for (int i = 1; i < secretOptions.length; i++) {
+            stringBuilder.append(i+1).append(". ").append(secretOptions[i].getTitle()).append(":\n");
+            stringBuilder.append(secretOptions[i].getDescription());
+            stringBuilder.append("\n(Requirement: ").append(secretOptions[i].getRequirement()).append(")\n");
+            stringBuilder.append("\n\nUpgrades to: ").append(secretUpgrades[i].getTitle()).append(" (Price: ").append(secretUpgrades[i].getPrice()).append("):\n");
+            stringBuilder.append(secretUpgrades[i].getDescription());
+            stringBuilder.append("\n(Requirement: ").append(secretUpgrades[i].getRequirement()).append(")\n\n");
+        }
+
+        return stringBuilder.toString();
+    }
+
+    private String getSoulGemAbility() {
+        return "Soul Gem Ability: " + soulGemAbility.getTitle() + " (Price: " + soulGemAbility.getPrice() + "):\n" +
+                soulGemAbility.getDescription() +
+                "\n(Requirement: " + soulGemAbility.getRequirement() + ")";
     }
 }

@@ -374,28 +374,28 @@ public class MainFrame extends JFrame {
         if (type.equals("All") || type.equals("Skylander"))
             items.addAll(Stream.of(Skylander.values())
                     .map(Skylander::getName)
-                    .collect(Collectors.toList()));
+                    .toList());
         if (type.equals("All") || type.equals("Game"))
             items.addAll(Stream.of(Game.values())
                     .map(Game::getName)
-                    .collect(Collectors.toList()));
+                    .toList());
         if (type.equals("All") || type.equals("Chapter"))
             items.addAll(Stream.of(Chapter.values())
                     .map(Chapter::getName)
-                    .collect(Collectors.toList()));
+                    .toList());
         if (type.equals("All") || type.equals("Element"))
             items.addAll(Stream.of(Element.values())
                     .map(Element::getName)
-                    .collect(Collectors.toList()));
+                    .toList());
         if (type.equals("All") || type.equals("Battle Class"))
             items.addAll(Stream.of(BattleClass.values())
-                    .map(BattleClass::getName)
-                    .collect(Collectors.toList()));
+                    .map(BattleClass::getName)   // or getName(), if you have it
+                    .toList());
 
         // 2) Filter by substring:
         items = items.stream()
                 .filter(name -> name.toLowerCase().contains(query))
-                .collect(Collectors.toList());
+                .toList();
 
         // 3) Sort if needed:
         if ("A → Z".equals(sort)) {
@@ -466,7 +466,6 @@ public class MainFrame extends JFrame {
         if (skylander.getBattleClass() != null) {
             stringBuilder.append("Battle Class: ").append(skylander.getBattleClass().getName()).append("\n");
         }
-        // if swap ability exists, show it too
         if (skylander.getSwapAbility() != null) {
             stringBuilder.append("Swap Ability: ").append(skylander.getSwapAbility().getName()).append("\n");
         }
@@ -501,16 +500,6 @@ public class MainFrame extends JFrame {
             stringBuilder.append(" - ").append(objective.getTitle()).append("\n");
         }
         stringBuilder.append("\n");
-        if (chapter.getSenseiShrineClasses() != null) {
-            if (chapter.getSenseiShrineClasses().size() == 1) {
-                stringBuilder.append("Sensei Shrine: ")
-                        .append(chapter.getSenseiShrineClasses().getFirst().getName());
-            } else {
-                stringBuilder.append("Sensei Shrines: ")
-                        .append(chapter.getSenseiShrineClasses().getFirst().getName()).append(" and ")
-                        .append(chapter.getSenseiShrineClasses().getLast().getName());
-            }
-        }
         detailsArea.setText(stringBuilder.toString());
     }
 
@@ -522,9 +511,14 @@ public class MainFrame extends JFrame {
 
     private void displayBattleClass(BattleClass battleClass) {
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("Name: ").append(battleClass.getName()).append("\n\n");
+        stringBuilder.append("Name: ").append(battleClass.getName()).append("\n");
+        System.out.println(battleClass.getSoulGemChapter());
         if (battleClass.getSoulGemChapter() != null) {
-            stringBuilder.append("Soul Gem Location: ").append(battleClass.getSoulGemChapter()).append("\n");
+            stringBuilder.append("Soul Gem Location: ").append(battleClass.getSoulGemChapter()).append("\n\n");
+        }
+        if (battleClass.getAbilityTree() != null) {
+            stringBuilder.append("Imaginator Abilities:\n");
+            stringBuilder.append(battleClass.getAbilityTree().getString());
         }
         detailsArea.setText(stringBuilder.toString());
     }

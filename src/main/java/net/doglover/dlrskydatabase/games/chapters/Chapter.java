@@ -5,10 +5,8 @@ import net.doglover.dlrskydatabase.games.chapters.objectives.CollectionObjective
 import net.doglover.dlrskydatabase.games.chapters.objectives.Objective;
 import net.doglover.dlrskydatabase.games.chapters.objectives.TimeObjective;
 import net.doglover.dlrskydatabase.games.chapters.objectives.TitleObjective;
-import net.doglover.dlrskydatabase.skylanders.alignment.BattleClass;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public enum Chapter {
@@ -210,34 +208,34 @@ public enum Chapter {
             objective1("Destroy the Catalytic Cyclotron")),
 
     // --- Imaginators chapters ---
-    CRADLE_OF_CREATION("Cradle of Creation", 1,
+    CRADLE_OF_CREATION("Cradle of Creation", 1, Game.IMAGINATORS, true,
             objective1("Reach the Mountain", "Escape the Maze", "Complete each path", "Get to the Doomlander"),
             siObjective2(3, 1, 3),
-            siObjective3(25, 14, 9, 0), BattleClass.BRAWLER),
-    MUSHROOM_RIVER("Mushroom River", 2,
+            siObjective3(25, 14, 9, 0)),
+    MUSHROOM_RIVER("Mushroom River", 2, Game.IMAGINATORS, true,
             objective1("Find the River", "Survive the Tilting Ships", "Complete the Water Pipe", "Push the Cannonballs", "Reach the End of the River"),
             siObjective2(3, 1, 3, 1),
-            siObjective3(25, 13, 8, 0), BattleClass.NINJA),
-    SCHOLARVILLE("Scholarville", 3,
+            siObjective3(25, 13, 8, 0)),
+    SCHOLARVILLE("Scholarville", 3, Game.IMAGINATORS, true,
             objective1("Reach the Cannon", "Escape the Ship", "Find the Next Cannon", "Escape the Second Ship", "Reach the Castle"),
             siObjective2(3, 1, 3, 1),
-            siObjective3(25, 18, 13, 0), BattleClass.SORCERER, BattleClass.SENTINEL),
-    SHELLMONT_SHORES("Shellmont Shores", 4,
+            siObjective3(25, 18, 13, 0)),
+    SHELLMONT_SHORES("Shellmont Shores", 4, Game.IMAGINATORS, true,
             objective1("Shut Down the Brain Storm", "Get the Key", "Get to the Top of the Stairs!", "Get to the Top of the Brain Storm"),
-            Chapter.siObjective2(3, 1, 3, 1),
-            siObjective3(25, 7, 12, 30), BattleClass.KNIGHT, BattleClass.BOWSLINGER),
-    SKY_FORTRESS("Sky Fortress", 5,
+            siObjective2(3, 1, 3, 1),
+            siObjective3(25, 7, 12, 30)),
+    SKY_FORTRESS("Sky Fortress", 5, Game.IMAGINATORS, true,
             objective1("Use the Station", "Board Vulture Dropship", "Activate the Wrecking Ball", "Reach the Hangar", "Recapture the Battleship"),
             siObjective2(3, 1, 3, 1),
-            siObjective3(50, 12, 15, 0), BattleClass.SMASHER, BattleClass.QUICKSHOT),
-    FIZZLAND("Fizzland", 6,
+            siObjective3(50, 12, 15, 0)),
+    FIZZLAND("Fizzland", 6, Game.IMAGINATORS, true,
             objective1("Stop Kaos!", "Suck Up the Globules!", "Sort the Globules"),
             siObjective2(3, 1, 3, 1),
-            siObjective3(40, 12), BattleClass.SWASHBUCKLER),
-    THE_GOLDEN_ARCADE("The Golden Arcade", 7,
+            siObjective3(40, 12)),
+    THE_GOLDEN_ARCADE("The Golden Arcade", 7, Game.IMAGINATORS, true,
             objective1("Find a way inside", "Find the Brain"),
             siObjective2(3, 1, 3, 1),
-            siObjective3(30, 13), BattleClass.BAZOOKER),
+            siObjective3(30, 13)),
     DRAGON_TEMPLE("Dragon Temple", 8, Game.IMAGINATORS, true,
             objective1("Climb to the Dragon Temple", "Glide down to Skylands"),
             siObjective2(3, 1, 2, 1),
@@ -323,7 +321,6 @@ public enum Chapter {
     private final List<Objective> objectives2;
     private final List<Objective> objectives3;
     private final List<Objective> objectives;
-    private final BattleClass[] senseiShrineClasses;
 
     /* --- Constructors --- */
     Chapter(String name, int chapterNumber, Game game, boolean isMainChapter,
@@ -339,25 +336,9 @@ public enum Chapter {
         objectives.addAll(objectives1);
         objectives.addAll(objectives2);
         objectives.addAll(objectives3);
-        this.senseiShrineClasses = null;
     }
     Chapter(String name, List<Objective> objectives1, List<Objective> objectives2, List<Objective> objectives3) {
         this(name, 0, Game.IMAGINATORS, false, objectives1, objectives2, objectives3);
-    }
-    Chapter(String name, int chapterNumber,
-            List<Objective> objectives1, List<Objective> objectives2, List<Objective> objectives3, BattleClass... senseiShrineClasses){
-        this.name = name;
-        this.chapterNumber = chapterNumber;
-        this.game = Game.IMAGINATORS;
-        this.isMainChapter = true;
-        this.objectives1 = objectives1;
-        this.objectives2 = objectives2;
-        this.objectives3 = objectives3;
-        this.objectives = new ArrayList<>();
-        objectives.addAll(objectives1);
-        objectives.addAll(objectives2);
-        objectives.addAll(objectives3);
-        this.senseiShrineClasses = senseiShrineClasses;
     }
 
     /* --- Getter Methods --- */
@@ -380,13 +361,6 @@ public enum Chapter {
             case 3 -> objectives3;
             default -> objectives;
         };
-    }
-    public List<BattleClass> getSenseiShrineClasses() {
-        if (senseiShrineClasses != null) {
-            return Arrays.stream(senseiShrineClasses).toList();
-        } else {
-            return null;
-        }
     }
 
     /* --- Static Helper Methods --- */
